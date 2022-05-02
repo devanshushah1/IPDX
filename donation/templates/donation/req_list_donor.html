@@ -1,0 +1,32 @@
+{% extends 'donation/base.html' %}
+{% block content %}
+<br>
+<section id="table">
+    <table style="margin: 30px 20% 30px 20%; width:60%" class="table table-striped table-light">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Ngo</th>
+                <th scope="col">Name</th>
+                <th scope="col">Category</th>
+                <th scope="col">Quantity</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for req in reqs %}
+            <tr>
+                <th scope="row">*</th>
+                <td>{{req.ngo}}</td>
+                <td>{{req.name}}</td>
+                <td>{{req.category}}</td>
+                <td>{{req.quantity}}</td>
+                <td>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</section>
+
+
+{% endblock %}

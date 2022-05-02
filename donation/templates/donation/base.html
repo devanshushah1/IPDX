@@ -1,0 +1,59 @@
+{% load static %}
+
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>charity</title>
+    <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<!-- Popper JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Source+Sans+Pro&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/list.css' %}">
+  </head>
+  <body>
+
+    <nav>
+      <div class="toggle">
+        <i class="fa fa-bars menu"></i>
+      </div>
+    </nav>
+    <div class="sidebar">
+      <ul>
+        {% if user.is_authenticated %}
+        {% if user.is_ngo %}
+          <li> <a href="{% url 'ngo_detail' pk=user.pk %}">Profile</a> </li>
+          <li> <a href="{% url 'upload_req' id=user.id %}">Upload Requirements</a> </li>
+          <li> <a href="{% url 'req_list' id=user.id %}">Requirements</a> </li>
+          <li> <a href="{% url 'req_list_backup' id=user.id %}">Past records</a> </li>
+          <li> <a href="{% url 'donated_list' id=user.id %}">Donations</a> </li>
+          {% else %}
+          <li> <a href="{% url 'donor_detail' pk=user.pk %}">Profile</a> </li>
+          <li> <a href="{% url 'req_list_donor'%}">Requirements</a> </li>
+          <li> <a href="{% url 'donate' id=user.id %}">Donate</a> </li>
+          <li> <a href="{% url 'donated_list_donor' id=user.id %}">Donations Made</a></li>
+          {% endif %}
+          <li> <a href="{% url 'logout' %}">Logout</a> </li>
+          {% else %}
+          <li><a class="head-left" href="{% url 'login' %}">Login</a></li>
+          <li><a class="head-left" href="{% url 'signup' %}">SignUp</a></li>
+        {% endif %}
+      </ul>
+    </div>
+
+      {% block content %}
+      {% endblock %}
+
+  </body>
+</html>

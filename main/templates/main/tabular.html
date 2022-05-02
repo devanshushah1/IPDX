@@ -1,0 +1,41 @@
+{% extends 'main/admin.html' %}
+
+{% block content %}
+
+<section id="table">
+    <table style="margin: 30px 20% 30px 20%; width:60%" class="table table-striped table-light">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Name</th>
+                <th scope="col">Category</th>
+                <!-- <th scope="col">Pending</th> -->
+            </tr>
+        </thead>
+        <tbody>
+            {% for requirement in requirements %}
+            <tr>
+                <th scope="row">1</th>
+                <td>{{requirement.name}}</td>
+                <td>{{requirement.category}}</td>
+                <!-- subtraction -->
+                <!-- <td> -->
+                <!-- </td> -->
+            </tr>
+            {% endfor %}
+            <!-- <tr>
+                <th scope="row">2</th>
+                <td>Jacob</td>
+                <td>jacob_123</td>
+                <td>2</td>
+            <tr>
+                <th scope="row">3</th>
+                <td>Larry</td>
+                <td>lary_123</td>
+                <td>5</td>
+            </tr> -->
+        </tbody>
+    </table>
+</section>
+
+{% endblock %}

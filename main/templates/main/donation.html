@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donation Page</title>
+    <!-- <link rel="stylesheet" href="registerUser.css"> -->
+    <script src="https://kit.fontawesome.com/332a215f17.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container mt-5">
+        <div class="jumbotron align-middle" style="background-color: #9fd7e6;">
+            <h2 class="display-4">{{req.ngo}}</h2>
+
+
+            <hr class="my-4">
+            <div class="row">
+                <div class="col-md-8">
+                    <b>
+                        <p class="lead">More Information about the NGO</p>
+                    </b>
+                    <p>{{req.ngo.address}}</p>
+                    <p>Item Required {{req.name}}</p>
+                    <p>Every donation would add up to a smile :)</p>
+                    <div class="qty mt-5">
+                        <style>
+                            .qty .count {
+                                color: #000;
+                                display: inline-block;
+                                vertical-align: top;
+                                font-size: 25px;
+                                font-weight: 700;
+                                line-height: 30px;
+                                padding: 0 2px;
+                                min-width: 35px;
+                                text-align: center;
+                            }
+
+                            .qty .plus {
+                                cursor: pointer;
+                                display: inline-block;
+                                vertical-align: top;
+                                color: white;
+                                width: 30px;
+                                height: 30px;
+                                font: 30px/1 Arial, sans-serif;
+                                text-align: center;
+                                border-radius: 50%;
+                            }
+
+                            .qty .minus {
+                                cursor: pointer;
+                                display: inline-block;
+                                vertical-align: top;
+                                color: white;
+                                width: 30px;
+                                height: 30px;
+                                font: 30px/1 Arial, sans-serif;
+                                text-align: center;
+                                border-radius: 50%;
+                                background-clip: padding-box;
+                            }
+
+                            div {
+                                text-align: center;
+                            }
+
+                            .minus:hover {
+                                background-color: #17255a !important;
+                            }
+
+                            .plus:hover {
+                                background-color: #17255a !important;
+                            }
+
+                            /*Prevent text selection*/
+                            span {
+                                -webkit-user-select: none;
+                                -moz-user-select: none;
+                                -ms-user-select: none;
+                            }
+
+                            input {
+                                border: 0;
+                                width: 2%;
+                            }
+
+                            input::-webkit-outer-spin-button,
+                            input::-webkit-inner-spin-button {
+                                -webkit-appearance: none;
+                                margin: 0;
+                            }
+
+                            input:disabled {
+                                background-color: white;
+                            }
+                        </style>
+                        <form action="" method="POST">
+                            {% csrf_token %}
+                            <!-- <span class="minus bg-dark">-</span>
+                            <input type="number" class="count" name="qty" value="1">
+                            <span class="plus bg-dark">+</span> -->
+                            <!-- <input type="submit" name="submit"> -->
+                            {{form}}
+                            <input type="submit" name="submit" class="btn btn-primary form-control form-group col-lg-3">
+
+
+                        </form>
+
+                    </div>
+                    <!--  -->
+                    <!-- <button class="btn btn-dark btn-lg mt-4">DONATE</button> -->
+
+
+
+                </div>
+                <div class="col-md-4 ">
+                    <div class="card " style="width: 18rem;">
+                        <img src="{{req.ngo.logo.url}}" class="card-img-top" alt="...">
+                        <!-- <div class="card-body">
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            </div> -->
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <script>
+        $(document).ready(function () {
+            $('.count').prop('disabled', true);
+            $(document).on('click', '.plus', function () {
+                $('.count').val(parseInt($('.count').val()) + 1);
+            });
+            $(document).on('click', '.minus', function () {
+                $('.count').val(parseInt($('.count').val()) - 1);
+                if ($('.count').val() == 0) {
+                    $('.count').val(1);
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

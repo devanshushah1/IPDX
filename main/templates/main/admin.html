@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+    <title>Admin Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <script src="https://kit.fontawesome.com/332a215f17.js" crossorigin="anonymous"></script>
+</head>
+<!-- Navbar Starts -->
+<div class="pos-f-t">
+    <div class="collapse" id="navbarToggleExternalContent">
+        <div class="bg-dark p-4">
+            <div class="row mt-5">
+                <h5 class="h4 col-md-3"><a href="{% url 'main:requirementform' id %}" class="text-white">Requirement
+                        Form</a>
+                </h5>
+                <h5 class="h4 col-md-3"><a href="{% url 'main:summary' id %}" class="text-white">Donation Summary</a>
+                </h5>
+                <h5 class="h4 col-md-3"><a href="{% url 'main:tabular' id %}" class="text-white">Tabular
+                        representation</a>
+                </h5>
+                <h5 class="h4 col-md-3"><a href="{% url 'logout'  %}" class="text-white">Logout</a>
+                </h5>
+            </div>
+            <!-- <span class="text-muted">Toggleable via the navbar brand.</span> -->
+        </div>
+    </div>
+    <nav class="navbar navbar-dark bg-dark">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent"
+            aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </nav>
+</div>
+
+
+<body style="text-align: center; justify-content: center; background: url(images/background.jpg);">
+    <img style="height: 200px; width: 200px; margin-top: 50px;" src="{{request.user.ngo.logo.url}}"
+        class="rounded mx-auto d-block" alt="...">
+    <h3 style="margin: 50px 20% 0px 20%;"> Welcome back </h3>
+    {% block content %}
+
+    {% endblock %}
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

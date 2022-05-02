@@ -1,0 +1,14 @@
+{% extends 'donation/base.html' %}
+{% block content %}
+
+<div class="profile">
+  <div class="profile-box">
+    <div class="profile-details">
+      <h1>{{ donor.name }}</h1>
+      <br>
+      <p><i class="far fa-user"></i> Username: {{ donor.user.username }}</p>
+      <p><i class="far fa-phone"></i> Phone: {{ donor.phone }}</p>
+    </div>
+  </div>
+</div>
+{% endblock %}

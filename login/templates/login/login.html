@@ -1,0 +1,27 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login In</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+</head>
+
+<body>
+    <div class="main">
+        <p class="sign" align="center">Sign in</p>
+        <form class="form1" method="POST">
+            {% csrf_token %}
+            <input class="un " type="text" align="center" name="Username" placeholder="Username">
+            <input class="pass" type="password" align="center" name="Password" placeholder="Password">
+            <input type="submit" name="submit" class="submit" align="center" value="Sign in">
+            <p class="forgot" align="center"><a href="{% url 'donor_signup' %}">Register as Donor</p>
+            <p class="forgot2" align="center"><a href="{% url 'ngo_signup' %}">Register as NGO</p>
+    </div>
+</body>
+
+</html>

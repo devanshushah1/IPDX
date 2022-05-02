@@ -1,0 +1,18 @@
+{% extends 'donation/base.html' %}
+{% block content %}
+<div class="container">
+<div class="jumbotron">
+  {% if donate_upload %}
+  {% csrf_token %}
+  <h1>Thanks for donating.</h1>
+  {% else %}
+  <h1>Donate</h1>
+  <form enctype="multipart/form-data" method="post">
+    {% csrf_token %}
+    {{ form }}
+    <input type="submit" class="btn btn-danger" name="" value="Upload">
+  </form>
+  {% endif %}
+</div>
+</div>
+{% endblock %}

@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+    <title>Donation Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="stylesheet" href="user.css">
+    <script src="https://kit.fontawesome.com/332a215f17.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+    <!-- Constant Nav -->
+    <style>
+        .nav-bg {
+            background: rgba(20, 54, 1, 0.6);
+        }
+
+        .navbar-nav .nav-link {
+            color: #fff !important;
+        }
+
+        .navbar-toggler {
+            outline: none !important;
+        }
+    </style>
+    <nav class="navbar navbar-expand-lg navbar-light nav-bg fixed-top py-2" id="mainNav">
+        <div class='container'>
+            <a class="navbar-brand text-white" href="#">Welcome User</a>
+            <button class='navbar-toggler navbar-toggler-right' type="button" data-toggle='collapse'
+                data-target='#myNavbar' aria-controls="myNavbar" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="navbar-nav ml-auto my-2 my-lg-0">
+                    <li class="nav-item text-white"><button class="btn btn-outline-primary btn-lg">
+                            <a href='index.html' class="text-white">
+                                Logout
+                                <i class="fa fa-sign-out ml-1" aria-hidden="true"></i>
+                            </a>
+                        </button></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+
+
+    <!-- Projects Section -->
+    <section class="project py-5">
+        <div class="container">
+            <div class="row my-3">
+                <div class="col-10 mx-auto text-center">
+                    <h1 class='text-uppercase'>Our Latest Projects</h1>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio quod, dicta repellendus
+                        suscipit saepe quam.</p>
+                </div>
+            </div>
+            <!--  -->
+            <div class="row">
+                <!-- single project -->
+                {% for post in posts %}
+                <div class="col-10 col-md-6 col-lg-4">
+                    <div class="project-container p-5
+                    outline">
+                        <div class="flip-card">
+                            <div class="flip-card-inner">
+                                <div class="flip-card-front">
+                                    <img src="images/random.jpg" alt="random" style="width:220px;height:170px;">
+                                </div>
+                                <div class="flip-card-back">
+                                    <p>Product required</p>
+                                    <p>Cost of product</p>
+                                    <p>NGO Name</p>
+                                    <a href="#" class="donation text-capitalize">Donate Now</a>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <h4 class="text-capitalize text-center my-2">
+                        Project 1
+                    </h4>
+                    <h6 class="text-center">
+                        Specifications
+                    </h6>
+                </div>
+                {% endfor %}
+                <!-- end of single project -->
+                <!-- single project -->
+                <div class="col-10 col-md-6 col-lg-4">
+                    <div class="project-container p-5
+                    outline">
+                        <div class="flip-card">
+                            <div class="flip-card-inner">
+                                <div class="flip-card-front">
+                                    <img src="images/random.jpg" alt="random" style="width:220px;height:170px;">
+                                </div>
+                                <div class="flip-card-back">
+                                    <p>Product required</p>
+                                    <p>Cost of product</p>
+                                    <p>NGO Name</p>
+                                    <a href="#" class="donation text-capitalize">Donate Now</a>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <h4 class="text-capitalize text-center my-2">
+                        Project 1
+                    </h4>
+                    <h6 class="text-center">
+                        Specifications
+                    </h6>
+                </div>
+                <!-- end of single project -->
+                <!-- single project -->
+                <div class="col-10 col-md-6 col-lg-4">
+                    <div class="project-container p-5
+                    outline">
+                        <div class="flip-card">
+                            <div class="flip-card-inner">
+                                <div class="flip-card-front">
+                                    <img src="images/random.jpg" alt="random" style="width:220px;height:170px;">
+                                </div>
+                                <div class="flip-card-back">
+                                    <p>Product required</p>
+                                    <p>Cost of product</p>
+                                    <p>NGO Name</p>
+                                    <a href="#" class="donation text-capitalize">Donate Now</a>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <h4 class="text-capitalize text-center my-2">
+                        Project 1
+                    </h4>
+                    <h6 class="text-center">
+                        Specifications
+                    </h6>
+                </div>
+                <!-- end of single project -->
+                <!-- single project -->
+                <div class="col-10 col-md-6 col-lg-4">
+                    <div class="project-container p-5
+                    outline">
+                        <div class="flip-card">
+                            <div class="flip-card-inner">
+                                <div class="flip-card-front">
+                                    <img src="images/random.jpg" alt="random" style="width:220px;height:170px;">
+                                </div>
+                                <div class="flip-card-back">
+                                    <p>Product required</p>
+                                    <p>Cost of product</p>
+                                    <p>NGO Name</p>
+                                    <a href="#" class="donation text-capitalize">Donate Now</a>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <h4 class="text-capitalize text-center my-2">
+                        Project 1
+                    </h4>
+                    <h6 class="text-center">
+                        Specifications
+                    </h6>
+                </div>
+                <!-- end of single project -->
+                <!-- single project -->
+                <div class="col-10 col-md-6 col-lg-4">
+                    <div class="project-container p-5
+                    outline">
+                        <div class="flip-card">
+                            <div class="flip-card-inner">
+                                <div class="flip-card-front">
+                                    <img src="images/random.jpg" alt="random" style="width:220px;height:170px;">
+                                </div>
+                                <div class="flip-card-back">
+                                    <p>Product required</p>
+                                    <p>Cost of product</p>
+                                    <p>NGO Name</p>
+                                    <a href="#" class="donation text-capitalize">Donate Now</a>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <h4 class="text-capitalize text-center my-2">
+                        Project 1
+                    </h4>
+                    <h6 class="text-center">
+                        Specifications
+                    </h6>
+                </div>
+                <!-- end of single project -->
+                <!-- single project -->
+                <div class="col-10 col-md-6 col-lg-4">
+                    <div class="project-container p-5
+                    outline">
+                        <div class="flip-card">
+                            <div class="flip-card-inner">
+                                <div class="flip-card-front">
+                                    <img src="images/random.jpg" alt="random" style="width:220px;height:170px;">
+                                </div>
+                                <div class="flip-card-back">
+                                    <p>Product required</p>
+                                    <p>Cost of product</p>
+                                    <p>NGO Name</p>
+                                    <a href="#" class="donation text-capitalize">Donate Now</a>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <h4 class="text-capitalize text-center my-2">
+                        Project 1
+                    </h4>
+                    <h6 class="text-center">
+                        Specifications
+                    </h6>
+                </div>
+                <!-- end of single project -->
+
+            </div>
+        </div>
+    </section>
+
+    <!-- pagination -->
+    <nav aria-label="Page navigation example">
+        <ul class="pagination justify-content-center">
+            <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+            <li class="page-item"><a class="page-link" href="#">1</a></li>
+            <li class="page-item"><a class="page-link" href="#">2</a></li>
+            <li class="page-item"><a class="page-link" href="#">3</a></li>
+            <li class="page-item"><a class="page-link" href="#">Next</a></li>
+        </ul>
+    </nav>
+
+
+    <script src="alert.js"></script>
+</body>
+
+</html>
+
+
+
+
+
+
+<!-- Alert box -->
+<!-- <div class="alert alert-success" role="alert">
+  <h4 class="alert-heading">Well done!</h4>
+  <p>Aww yeah, you successfully read this important alert message. This example text is going to run a bit longer so that you can see how spacing within an alert works with this kind of content.</p>
+  <hr>
+  <p class="mb-0">Whenever you need to, be sure to use margin utilities to keep things nice and tidy.</p>
+</div> -->

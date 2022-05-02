@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+    <title>Admin Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <script src="https://kit.fontawesome.com/332a215f17.js" crossorigin="anonymous"></script>
+</head>
+<!-- Navbar Starts -->
+<div class="pos-f-t">
+    <div class="collapse" id="navbarToggleExternalContent">
+        <div class="bg-dark p-4">
+            <div class="row mt-5">
+                <h5 class="h4 col-md-4"><a href="#form" class="text-white">Requirement Form</a></h5>
+                <h5 class="h4 col-md-4"><a href="#card" class="text-white">Donation Summary</a></h5>
+                <h5 class="h4 col-md-4"><a href="#table" class="text-white">Tabular representation</a></h5>
+            </div>
+            <!-- <span class="text-muted">Toggleable via the navbar brand.</span> -->
+        </div>
+    </div>
+    <nav class="navbar navbar-dark bg-dark">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent"
+            aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </nav>
+</div>
+
+
+<body style="text-align: center; justify-content: center; background: url(images/background.jpg);">
+    <img style="height: 200px; width: 200px; margin-top: 50px;" src="images/random.jpg" class="rounded mx-auto d-block"
+        alt="...">
+    <p style="margin: 50px 20% 0px 20%;"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio natus
+        harum officiis voluptatum voluptates,
+        ipsa provident at libero cum obcaecati alias, laborum commodi minus hic. Eaque repudiandae quisquam amet ipsam!
+    </p>
+    <!-- Form section -->
+
+    {% block content %}
+
+    {% endblock %}
+
+    <section id="form">
+        <form action="">
+            <div style="margin: 50px 20% 0px 20%; width:60%" class="form-group">
+                <input type="text" class="form-control" id="Name" placeholder="Name">
+            </div>
+
+            <select style="margin: 30px 20% 0px 20%; width:60%" class="form-control">
+                <option>Type of Donation needed</option>
+                <option>Medicine</option>
+                <option>Equipment</option>
+                <option>Cash</option>
+            </select>
+
+            <div style="margin: 30px 20% 0px 20%; width:60%" class="form-group">
+                <input type="text" class="form-control" id="Number" placeholder="Number of Items">
+            </div>
+
+            <div style="margin: 30px 20% 30px 20%; width:60%" class="form-group">
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+
+        </form>
+    </section>
+    <!-- Card starts -->
+    <section id="card">
+        <div style="margin: 30px 20% 30px 20%; width:60%" class="card">
+            <div class="card-header">
+                Donation Summary
+            </div>
+            <div class="card-body">
+                <h6 class="card-title text-left">Donation of :</h6>
+                <h6 class="card-title text-left">Donated by :</h6>
+                <h6 class="card-title text-left">Quantity donated :</h6>
+                <div class="progress">
+                    <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25"
+                        aria-valuemin="0" aria-valuemax="100">25%</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Table starts -->
+    <section id="table">
+        <table style="margin: 30px 20% 30px 20%; width:60%" class="table table-striped table-light">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Username</th>
+                    <th scope="col">Donated amount</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">1</th>
+                    <td>Mark</td>
+                    <td>marl_123</td>
+                    <td>15</td>
+                </tr>
+                <tr>
+                    <th scope="row">2</th>
+                    <td>Jacob</td>
+                    <td>jacob_123</td>
+                    <td>2</td>
+                </tr <tr>
+                <th scope="row">3</th>
+                <td>Larry</td>
+                <td>lary_123</td>
+                <td>5</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

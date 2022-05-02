@@ -1,0 +1,390 @@
+{% load static %}
+
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+    <title>Donation Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+
+    <script src="https://kit.fontawesome.com/332a215f17.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <!-- Navbar begins -->
+    <nav class="navbar navbar-expand-lg navbar-light nav-bg fixed-top py-2" id="mainNav">
+        <div class='container'>
+            <a class="navbar-brand text-white" href="#">The First Funds</a>
+            <button class='navbar-toggler navbar-toggler-right' type="button" data-toggle='collapse'
+                data-target='#myNavbar' aria-controls="myNavbar" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="navbar-nav ml-auto my-2 my-lg-0">
+                    <li class="nav-item"><a class="nav-link" href="#hero">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#stories">Stories</a></li>
+                    <!-- <li class="nav-item"><a class="nav-link" href="#">Projects</a></li> -->
+                    <li class="nav-item"><a class="nav-link" href="{% url 'login' %}">Login</a></li>
+
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+    <!-- Navbar ends -->
+
+    <!-- Hero Section -->
+    <section id="hero" class="d-flex justify-content-center align-items-center">
+        <img style="content:'';
+        position: absolute;
+        left:50%;
+        top:0;
+        width:95%;
+        height:100%;
+        background:  no-repeat center top;
+        background: #000405;
+        z-index: 0;
+        border-radius:0 0 50% 50%;
+        transform:translateX(-50%) rotate(0deg);" src="{% static 'images/index.jpg' %}" alt="...">
+        <div id="heroCarousel" class="container carousel carousel-fade" data-ride="carousel">
+            <!-- Slide 1 -->
+            <div class="carousel-item active">
+                <div class="carousel-container">
+                    <h2 class="animate__animated animate__backInDown">
+                        Let's <span>Make</span> <span>A</span> <span>Difference</span>
+                    </h2>
+                    <p class="animate__animated animate__fadeInUp">
+                        There is no time to lose. Without immediate funding and key lifesaving interventions to deliver
+                        essentials, strengthen health systems and maintain routine services for vulnerable poor and
+                        middle class people who cannot afford heavy bills of hospitals, many would loose their lives.
+                    </p>
+                    <a href='{% url "login" %}' class='btn hero-btn animate__animated animate__backInUp'>
+                        Login
+                    </a>
+                </div>
+            </div>
+            <!-- End of slide 1-->
+            <!-- Slide 1 -->
+            <div class="carousel-item ">
+                <div class="carousel-container">
+                    <h2 class="animate__animated animate__backInDown">
+                        Shortage Of Essentials
+                    </h2>
+                    <p class="animate__animated animate__fadeInUp">
+                        The Food and Drug Administration has contacted producers of about 20 drugs that either source
+                        all of their main ingredients are finished and are faceing shortages due to the coronavirus
+                        outbreak.
+                    </p>
+                    <a href="{% url 'login' %}" class='btn hero-btn animate__animated animate__backInUp'>
+                        Login
+                    </a>
+                </div>
+            </div>
+            <!-- End of slide 1-->
+            <!-- Slide 1 -->
+            <div class="carousel-item ">
+                <div class="carousel-container">
+                    <h2 class="animate__animated animate__backInDown">
+                        Take Action
+                    </h2>
+                    <p class="animate__animated animate__fadeInUp">
+                        All around the world, people are taking necessary steps to protect themselves and their families
+                        from the new coronavirus disease (COVID-19), to support their communities, and prevent the
+                        spread of the outbreak. And your help matters.
+                    </p>
+                    <a href="{% url 'login' %}" class='btn hero-btn animate__animated animate__backInUp'>
+                        Login
+                    </a>
+                </div>
+            </div>
+            <!-- End of slide 1-->
+            <!-- <a class="carousel-control-prev" href="#herocarousel" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon fas fa-chevron-left" aria-hidden="true">
+          <span class="sr-only">Previous</span>
+        </span>
+      </a>
+    </div>
+    <a class="carousel-control-next" href="#herocarousel" role="button" data-slide="next">
+      <span class="carousel-control-next-icon fas fa-chevron-right" aria-hidden="true">
+        <span class="sr-only">Next</span>
+      </span>
+    </a> -->
+        </div>
+
+        </div>
+    </section>
+
+    <!-- end of hero section -->
+
+
+    <!-- About us -->
+    <section class="mt-5" id="about">
+        <div class='container'>
+            <div class="row justify-content-center mb-5">
+                <div class="col-md-8 text-center heading-section">
+                    <span>About Us</span>
+                    <h2 class="mb-3">Our Mission | Vision and Plans</h2>
+                </div>
+            </div>
+            <div class="row tabs mt-4">
+                <div class="col-md-4">
+                    <ul class="nav nav-pills nav-fill d-md-flex d-block flex-column">
+                        <li class="nav-item text-left">
+                            <a class="nav-link active py-4" data-toggle="tab" href="#about-1">About</a>
+                        </li>
+                        <li class="nav-item text-left">
+                            <a class="nav-link py-4" data-toggle="tab" href="#about-2">Our Beginning</a>
+                        </li>
+                        <li class="nav-item text-left">
+                            <a class="nav-link py-4" data-toggle="tab" href="#about-3">Our Mission</a>
+                        </li>
+                        <li class="nav-item text-left">
+                            <a class="nav-link py-4" data-toggle="tab" href="#about-4">Our Vision</a>
+                        </li>
+                        <!-- <li class="nav-item text-left">
+              <a class="nav-link py-4" data-toggle="tab" href="#about-5">Our Mandate</a>
+            </li>
+            <li class="nav-item text-left">
+              <a class="nav-link py-4" data-toggle="tab" href="#about-6">Our Plans</a>
+            </li> -->
+                    </ul>
+                </div>
+                <!--  -->
+                <div class="col-md-8">
+                    <div class="tab-content">
+                        <div class="tab-pane container p-0 active" id="about-1">
+                            <div><img class="img" src="{% static 'images/aboutus.jpeg' %}" alt="...">
+                            </div>
+
+                            <h3><a href="#">About Us</a></h3>
+                            <p>The First Funds born of a desire to bring assistance without discrimination to the
+                                wounded on the battlefield,
+                                endeavors—in its international and national capacity—to prevent and alleviate human
+                                suffering wherever
+                                it may be found. Its purpose is to protect life and health and to ensure respect for the
+                                human being.</p>
+                        </div>
+                        <!--  -->
+                        <div class="tab-pane container p-0 " id="about-2">
+                            <div><img class="img" src="{% static 'images/begin.jpeg' %}" alt="...">
+                            </div>
+                            <h3><a href="#">Our Beginning</a></h3>
+                            <p>Since our founding on September 26, 2020, The First Funds has been dedicated to serving
+                                people in need. We are tasked by the federal government with providing services to
+                                members of the Indian armed forces and their families as well as providing disaster
+                                relief in the country and around the globe.
+                            </p>
+                        </div>
+
+                        <!--  -->
+                        <div class="tab-pane container p-0 " id="about-3">
+                            <div><img class="img" src="{% static 'images/mission.jpeg' %}" alt="...">
+                            </div>
+                            <h3><a href="#">Our Mission</a></h3>
+                            <p> The mission of The First Funds is to help prevent and alleviate human suffering in the
+                                face of emergencies. Across
+                                all the ways we provide help and hope to others - from bringing disaster relief,
+                                providing lifesaving blood and
+                                training in lifesaving skills, to reaching across borders to reconnect families and
+                                supporting military families
+                                - the American Red Cross makes a big impact.</p>
+                        </div>
+                        <!--  -->
+                        <div class="tab-pane container p-0 " id="about-4">
+                            <div><img class="img" src="{% static 'images/vision.jpeg' %}" alt="...">
+                            </div>
+                            <h3><a href="#">Our Vision</a></h3>
+                            <p>
+                                The vision is to make no discrimination as to nationality, race, religious beliefs,
+                                class or political opinions. It endeavors to relieve the suffering of individuals, being
+                                guided solely by their needs, and to give priority to the most urgent cases of distress.
+                                <!-- The mission of The First Funds is to help prevent and alleviate human suffering in the face of emergencies. Across 
+                all the ways we provide help and hope to others - from bringing disaster relief, providing lifesaving blood and
+                 training in lifesaving skills, to reaching across borders to reconnect families and supporting military families 
+                 - the American Red Cross makes a big impact. -->
+                            </p>
+                        </div>
+
+                        <!-- <div class="tab-pane container p-0 " id="about-5">
+              <div class="img" style="background-image:url(images/random.jpg);"></div>
+              <h3><a href="#">Our Mandate</a></h3>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, omnis natus! Modi eaque maxime
+                asperiores. Nostrum,
+                dolore minus nam recusandae repudiandae enim exercitationem ratione corporis vero optio eius.
+                Voluptatibus, ipsum.
+              </p>
+            </div>
+            <div class="tab-pane container p-0 " id="about-6">
+              <div class="img" style="background-image:url(images/random.jpg);"></div>
+              <h3><a href="#">Our Plans</a></h3>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, omnis natus! Modi eaque maxime
+                asperiores. Nostrum,
+                dolore minus nam recusandae repudiandae enim exercitationem ratione corporis vero optio eius.
+                Voluptatibus, ipsum.
+              </p>
+            </div> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+    </section>
+
+    <!-- end about us -->
+
+    <!-- Stories -->
+    <section class='mt-3' id="stories">
+        <div class='stories'>
+            <div class="container">
+                <div class="section-title text-center">
+                    <h3>Stories</h3>
+                    <p>Explore this collection of stories and experience what The First Funds brings to everyday people,
+                        every day. If what you see inspires you, consider supporting our mission financially, by making
+                        a blood donation or giving away medicines and equipments</p>
+                </div>
+                <!--  -->
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="story-box overlay shadow">
+                            <div class="story-icon">
+                                <i class="fa fa-ambulance"></i>
+                            </div>
+                            <h2>Health</h2>
+                            <p>The Food and Drug Administration has contacted producers of about 20 drugs that either
+                                source all of their main ingredients are finished and are faceing shortages due to the
+                                coronavirus outbreak.</p>
+                        </div>
+                    </div>
+                    <!--  -->
+                    <div class="col-md-4">
+                        <div class="story-box overlay shadow">
+                            <div class="story-icon">
+                                <i class="fa fa-stethoscope" aria-hidden="true"></i>
+                            </div>
+                            <h2>Equipments</h2>
+                            <p>Many hospitals are already reporting shortages of key equipment needed to care for
+                                critically ill patients, including ventilators and personal protective equipment (PPE)
+                                for medical staff. </p>
+                        </div>
+                    </div>
+                    <!--  -->
+                    <div class="col-md-4">
+                        <div class="story-box overlay shadow">
+                            <div class="story-icon">
+                                <i class="fa fa-hand-holding-water" aria-hidden="true"></i>
+                            </div>
+                            <h2>Blood</h2>
+                            <p>Donating blood is a vital way to help save lives. Along with helping save lives, the
+                                plasma can help corona infected people which is why donating blood is important. A
+                                single donation can save three lives.</p>
+                        </div>
+                    </div>
+                    <!--  -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- End of stories -->
+    <!-- Projects Section
+  <section class="project py-5">
+    <div class="container">
+      <div class="row my-3">
+        <div class="col-10 mx-auto text-center">
+          <h1 class="text-uppercase">Our Latest Projects</h1>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae neque aperiam blanditiis velit mollitia.</p>
+        </div>
+      </div>
+    
+
+    </div>
+    </section> -->
+
+    <!-- FOOTER -->
+    <section class="bg-dark">
+        <div class="container text-white text-center py-5">
+            <p class="lead">
+                JOIN OUR NEWSLETTER FOR UPDATES
+            </p>
+            <div class="row justify-content-center">
+                <div class="col-10 col-sm-8 col-md-6 col-lg-4">
+                    <form action="" class="form-inline">
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="Your Email">
+                            <div class="input-group-append">
+                                <button class="btn btn-info">JOIN NOW</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section style="background-color: #1f1f1f;">
+        <ul class="nav text-center justify-content-center">
+            <li class="nav-item ">
+                <a href="#about" class="nav-link text-white">
+                    ABOUT
+                </a>
+            </li>
+            <li class="nav-item ">
+                <a href="#stories" class="nav-link text-white">
+                    STORIES
+                </a>
+            </li>
+            <!-- <li class="nav-item ">
+        <a href="#" class="nav-link text-white">
+          PROJECT
+        </a>
+      </li> -->
+            <li class="nav-item ">
+                <a href="{% url 'login' %}" class="nav-link text-white">
+                    LOGIN
+                </a>
+            </li>
+            <!-- <li class="nav-item ">
+        <a href="#" class="nav-link text-white">
+          DONATION
+        </a>
+      </li> -->
+        </ul>
+
+    </section>
+
+
+
+
+
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
+    <script src="alert.js"></script>
+</body>
+
+</html>

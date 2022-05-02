@@ -1,0 +1,131 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+    <title>Donation Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="stylesheet" href="{% static 'css/user.css' %}">
+    <script src="https://kit.fontawesome.com/332a215f17.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+    <!-- Constant Nav -->
+    <style>
+        .nav-bg {
+            background: #247ba0;
+        }
+
+        .navbar-nav .nav-link {
+            color: #fff !important;
+        }
+
+        .navbar-toggler {
+            outline: none !important;
+        }
+    </style>
+    <nav class="navbar navbar-expand-lg navbar-light nav-bg fixed-top py-2" id="mainNav">
+        <div class='container'>
+            <a class="navbar-brand text-white" href="#">Welcome User</a>
+            <button class='navbar-toggler navbar-toggler-right' type="button" data-toggle='collapse'
+                data-target='#myNavbar' aria-controls="myNavbar" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="navbar-nav ml-auto my-2 my-lg-0">
+                    <li class="nav-item text-white"><button class="btn btn-outline-primary btn-lg"><a class="text-white" href="{% url 'main:ngo_list' %}">Ngos</a></button></li>
+                    <li class="nav-item text-white"><button class="btn btn-outline-primary btn-lg"><a class="text-white" href="{% url 'main:user' user_id %}">Requirements</a></button></li>
+                    <li class="nav-item text-white"><button class="btn btn-outline-primary btn-lg">
+                            <a href='{% url "logout" %}' class="text-white">
+                                Logout
+                                <i class="fa fa-sign-out ml-1" aria-hidden="true"></i>
+                            </a>
+                        </button></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+
+
+    <!-- Projects Section -->
+    <section class="project py-5">
+            <div class="container">
+                <div class="row my-3">
+                    <div class="col-10 mx-auto text-center">
+                        <h1 class='text-uppercase'>Categories</h1>
+                        <p>Giving is not just about making a donation, it's about making a difference.</p>
+                    </div>
+                <div class="row">                    
+                    {% for category in categories %}
+                    <div class="col-lg-4 mt-3 col-md-6 col-sm-12">
+                        <div class="card">
+                            {% with 'images/'|add:category|add:'.jpg' as image_static %}
+                            <img src="{% static image_static %}" alt="Avatar" style="width:100%">
+                            {% endwith %}
+                            <div class="container">
+                                <h4><b>{{category}}</b></h4>
+
+                                <a href='{% url "main:user_category" user_id category %}' class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Requirements</a>
+                            </div>
+                        </div>
+                    </div>
+                        {% endfor %}
+                </div>
+            </div>
+            
+            <!--  -->
+            <!-- <div class="row">
+                <!-- single project -->
+                {% for post in posts %}
+                <div class="col-10 col-md-6 col-lg-4">
+                    <div class="project-container p-5
+                    outline">
+                        <div class="flip-card">
+                            <div class="flip-card-inner">
+                                <div class="flip-card-front">
+                                    <img src="{% static 'images/aboutus.jpeg' %}" alt="random"
+                                        style="width:220px;height:170px;">
+                                </div>
+                                <div class="flip-card-back">
+                                    <p>{{post.name}}</p>
+                                    <p>{{post.category}}</p>
+                                    <!-- <p>{{post.initial_count}}</p> -->
+                                    <p>{{post.ngo.ngo_name}}</p>
+                                    <a href="{% url 'main:donation' post.id%}" class="donation text-capitalize">Donate
+                                        Now</a>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div class="my-2">
+                    <h4 class="text-capitalize text-center my-2">
+                        {{post.name}}
+                    </h4>
+                    <!-- <h6 class="text-center">
+                        Specifications
+                    </h6> -->
+                </div>
+                {% endfor %}
+            </div> -->
+        </div>
+    </section>
+
+    <!-- {% include 'main/pagination.html' with page=posts %} -->
+
+
+    <script src="alert.js"></script>
+</body>
+
+</html>

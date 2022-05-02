@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        .nav-bg {
+            background: #247ba0;
+        }
+
+        .navbar-nav .nav-link {
+            color: #fff !important;
+        }
+
+        .navbar-toggler {
+            outline: none !important;
+        }
+    </style>
+    <nav class="navbar navbar-expand-lg navbar-light nav-bg fixed-top py-2" id="mainNav">
+        <div class='container'>
+            <a class="navbar-brand text-white" href="#">Welcome User</a>
+            <button class='navbar-toggler navbar-toggler-right' type="button" data-toggle='collapse'
+                data-target='#myNavbar' aria-controls="myNavbar" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="navbar-nav ml-auto my-2 my-lg-0">
+                    <li class="nav-item text-white"><button class="btn btn-outline-primary btn-lg"><a class="text-white">Ngos</a></button></li>
+                    <li class="nav-item text-white"><button class="btn btn-outline-primary btn-lg"><a class="text-white" href="{% url 'main:user' user_id %}">Requirements</a></button></li>
+                    <li class="nav-item text-white"><button class="btn btn-outline-primary btn-lg">
+                            <a href='{% url "logout" %}' class="text-white">
+                                Logout
+                                <i class="fa fa-sign-out ml-1" aria-hidden="true"></i>
+                            </a>
+                        </button></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="d-flex justify-content-center mt-2">
+        
+        <div class="container col-md-6">
+            
+            <div class="input-group mt-5 justify-content-center p-4">
+                <div class="form-outline">
+                    <input type="search" id="form1" class="form-control" />
+                    <label class="form-label" for="form1">Search</label>
+                </div>
+                <button id="butn" type="button" class="btn btn-primary">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+    {% for ngo in posts %}
+    <div class=" d-flex justify-content-center">
+        <div class="card text-center m-5 mt-2 p-3">
+            <div class="card-header">
+                {{ngo}}
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">{{ngo}}</h5>
+                <p class="card-text">{{ngo.aim}}</p>
+                <a href="#" class="btn btn-primary">Donate Money</a>
+            </div>
+            <div class="card-footer text-muted">
+                2 days ago
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+    <script>
+        document.getElementById("butn").addEventListener("click", function(){
+            var text = document.getElementById("form1").value;
+            temp = `/main/ngo_search/${text}`;
+            console.log(text);
+            console.log(temp);
+            location.href=temp;
+    });
+    </script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+{% extends 'donation/base.html' %}
+
+{% block content %}
+
+<section id="table">
+    <table style="margin: 30px 20% 30px 20%; width:60%" class="table table-striped table-light">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Name</th>
+                <th scope="col">Requirement</th>
+                <th scope="col">Quantity</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for donate in donates %}
+            <tr>
+                <th scope="row">*</th>
+                <td>{{donate.donor}}</td>
+                <td>{{donate.requirements}}</td>
+                <td>{{donate.count}}</td>
+                <td>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</section>
+
+{% endblock %}
