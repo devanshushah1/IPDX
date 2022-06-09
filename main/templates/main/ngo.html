@@ -1,4 +1,4 @@
-{% load static %}
+te{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -16,6 +16,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <link rel="stylesheet" href="{% static 'css/user.css' %}">
     <script src="https://kit.fontawesome.com/332a215f17.js" crossorigin="anonymous"></script>
+    <!-- Razorpay -->
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
 
 </head>
 
@@ -61,8 +63,7 @@
             
             <div class="input-group mt-5 justify-content-center p-4">
                 <div class="form-outline">
-                    <input type="search" id="form1" class="form-control" />
-                    <label class="form-label" for="form1">Search</label>
+                    <input type="search" id="form1" class="form-control" placeholder="Search"/>
                 </div>
                 <button id="butn" type="button" class="btn btn-primary">
                     <i class="fas fa-search"></i>
@@ -75,7 +76,7 @@
         
  
 <html>
-        {% for ngo in posts %}
+    {% for ngo in posts %}
     <div class=" d-flex justify-content-center">
         <div class="card text-center m-5 mt-2 p-3">
             <div class="card-header">
@@ -84,10 +85,7 @@
             <div class="card-body">
                 <h5 class="card-title">{{ngo}}</h5>
                 <p class="card-text">{{ngo.aim}}</p>
-                <a href="#" class="btn btn-primary">Donate Money</a>
-            </div>
-            <div class="card-footer text-muted">
-                2 days ago
+                <div id="donate-button" href="#" class="btn btn-primary">Donate Money</div>
             </div>
         </div>
     </div>
@@ -112,6 +110,46 @@
             console.log(text);
             console.log(temp);
             location.href=temp;
+    });
+    var options = {
+    "key": "rzp_test_eE7pvpf4z01q6G", // Enter the Key ID generated from the Dashboard
+    "amount": "1000000", // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
+    "currency": "INR",
+    "name": "Aadhar Charitable Trust, Mumbai",
+    "description": "Test Transaction",
+    "image": "https://example.com/your_logo",
+    "order_id": "order_JfWnFbsLg33ThA", //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
+    "handler": function (response){
+        alert(response.razorpay_payment_id);
+        alert(response.razorpay_order_id);
+        alert(response.razorpay_signature)
+    },
+    "prefill": {
+        "name": "Gaurav Kumar",
+        "email": "gaurav.kumar@example.com",
+        "contact": "9999999999"
+    },
+    "notes": {
+        "address": "Razorpay Corporate Office"
+    },
+    "theme": {
+        "color": "#3399cc"
+    }
+};
+var rzp1 = new Razorpay(options);
+rzp1.on('payment.failed', function (response){
+        alert(response.error.code);
+        alert(response.error.description);
+        alert(response.error.source);
+        alert(response.error.step);
+        alert(response.error.reason);
+        alert(response.error.metadata.order_id);
+        alert(response.error.metadata.payment_id);
+});
+
+    document.getElementById("donate-button").addEventListener("click", function(){
+    rzp1.open();
+    e.preventDefault();
     });
     </script>
 </body>
