@@ -326,7 +326,7 @@
                         <div class="input-group">
                             <input type="text" class="form-control" placeholder="Your Email">
                             <div class="input-group-append">
-                                <button class="btn btn-info">JOIN NOW</button>
+                                <button class="btn btn-info" onclick="closeForm()">JOIN NOW</button>
                             </div>
                         </div>
                     </form>
@@ -366,12 +366,11 @@
 
     </section>
 
-
-
-
-
-
-
+    <script>
+        function closeForm() {
+          document.getElementById("myForm").style.display = "none";
+        }
+    </script>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

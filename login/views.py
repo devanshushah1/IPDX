@@ -9,6 +9,7 @@ from .forms import *
 from .models import *
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
+from .chatbot import chat
 
 
 # Create your views here.
@@ -150,3 +151,11 @@ def assign_randomCIty(city_list):
         ngo.city = random.choice(city_list)
         ngo.save()
 
+
+def chatUser(request):
+    context = {}
+    if request.method == 'POST':
+        message = request.POST['messageText'].encode('utf-8').strip()
+        bot_response = chat(message)
+        context = {'status':'OK','answer':bot_response}
+    return render(request, 'login/chat.html', context)
