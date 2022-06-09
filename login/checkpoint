@@ -1,0 +1,2 @@
+model_checkpoint_path: "/Users/paresh/PycharmProjects/ngo_ipdx/IPDX/login/model.tflearn"
+all_model_checkpoint_paths: "/Users/paresh/PycharmProjects/ngo_ipdx/IPDX/login/model.tflearn"
