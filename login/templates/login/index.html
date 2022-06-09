@@ -23,7 +23,7 @@
     <!-- Navbar begins -->
     <nav class="navbar navbar-expand-lg navbar-light nav-bg fixed-top py-2" id="mainNav">
         <div class='container'>
-            <a class="navbar-brand text-white" href="#">The First Funds</a>
+            <a class="navbar-brand text-white" href="#">Be My Angel</a>
             <button class='navbar-toggler navbar-toggler-right' type="button" data-toggle='collapse'
                 data-target='#myNavbar' aria-controls="myNavbar" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -167,7 +167,7 @@
                             </div>
 
                             <h3><a href="#">About Us</a></h3>
-                            <p>The First Funds born of a desire to bring assistance without discrimination to the
+                            <p>Be My Angel born of a desire to bring assistance without discrimination to the
                                 wounded on the battlefield,
                                 endeavors—in its international and national capacity—to prevent and alleviate human
                                 suffering wherever
@@ -179,7 +179,7 @@
                             <div><img class="img" src="{% static 'images/begin.jpeg' %}" alt="...">
                             </div>
                             <h3><a href="#">Our Beginning</a></h3>
-                            <p>Since our founding on September 26, 2020, The First Funds has been dedicated to serving
+                            <p>Since our founding on September 26, 2020, Be My Angel has been dedicated to serving
                                 people in need. We are tasked by the federal government with providing services to
                                 members of the Indian armed forces and their families as well as providing disaster
                                 relief in the country and around the globe.
@@ -191,7 +191,7 @@
                             <div><img class="img" src="{% static 'images/mission.jpeg' %}" alt="...">
                             </div>
                             <h3><a href="#">Our Mission</a></h3>
-                            <p> The mission of The First Funds is to help prevent and alleviate human suffering in the
+                            <p> The mission of Be My Angel is to help prevent and alleviate human suffering in the
                                 face of emergencies. Across
                                 all the ways we provide help and hope to others - from bringing disaster relief,
                                 providing lifesaving blood and
@@ -208,7 +208,7 @@
                                 The vision is to make no discrimination as to nationality, race, religious beliefs,
                                 class or political opinions. It endeavors to relieve the suffering of individuals, being
                                 guided solely by their needs, and to give priority to the most urgent cases of distress.
-                                <!-- The mission of The First Funds is to help prevent and alleviate human suffering in the face of emergencies. Across 
+                                <!-- The mission of Be My Angel is to help prevent and alleviate human suffering in the face of emergencies. Across 
                 all the ways we provide help and hope to others - from bringing disaster relief, providing lifesaving blood and
                  training in lifesaving skills, to reaching across borders to reconnect families and supporting military families 
                  - the American Red Cross makes a big impact. -->
@@ -251,7 +251,7 @@
             <div class="container">
                 <div class="section-title text-center">
                     <h3>Stories</h3>
-                    <p>Explore this collection of stories and experience what The First Funds brings to everyday people,
+                    <p>Explore this collection of stories and experience what Be My Angel brings to everyday people,
                         every day. If what you see inspires you, consider supporting our mission financially, by making
                         a blood donation or giving away medicines and equipments</p>
                 </div>
@@ -324,9 +324,11 @@
                 <div class="col-10 col-sm-8 col-md-6 col-lg-4">
                     <form action="" class="form-inline">
                         <div class="input-group">
-                            <input type="text" class="form-control" placeholder="Your Email">
+                            <input type="email" class="form-control" placeholder="Your Email">
                             <div class="input-group-append">
-                                <button class="btn btn-info">JOIN NOW</button>
+                                <div class="popup btn btn-email btn-info" onclick="myFunction()">JOIN NOW!
+                                    <span class="popuptext" id="myPopup">Thank you for subscribing to our newsletter!</span>
+                                  </div>
                             </div>
                         </div>
                     </form>
@@ -364,6 +366,65 @@
       </li> -->
         </ul>
 
+        <style>
+            /* Popup container - can be anything you want */
+            .popup {
+              position: relative;
+              display: inline-block;
+              cursor: pointer;
+              -webkit-user-select: none;
+              -moz-user-select: none;
+              -ms-user-select: none;
+              user-select: none;
+            }
+            
+            /* The actual popup */
+            .popup .popuptext {
+              visibility: hidden;
+              width: 160px;
+              background-color: #555;
+              color: #fff;
+              text-align: center;
+              border-radius: 6px;
+              padding: 8px 0;
+              position: absolute;
+              z-index: 1;
+              bottom: 125%;
+              left: 50%;
+              margin-left: -80px;
+            }
+            
+            /* Popup arrow */
+            .popup .popuptext::after {
+              content: "";
+              position: absolute;
+              top: 100%;
+              left: 50%;
+              margin-left: -5px;
+              border-width: 5px;
+              border-style: solid;
+              border-color: #555 transparent transparent transparent;
+            }
+            
+            /* Toggle this class - hide and show the popup */
+            .popup .show {
+              visibility: visible;
+              -webkit-animation: fadeIn 1s;
+              animation: fadeIn 1s;
+            }
+            
+            /* Add animation (fade in the popup) */
+            @-webkit-keyframes fadeIn {
+              from {opacity: 0;} 
+              to {opacity: 1;}
+            }
+            
+            @keyframes fadeIn {
+              from {opacity: 0;}
+              to {opacity:1 ;}
+            }
+            </style>
+
     </section>
 
 
@@ -386,5 +447,13 @@
         crossorigin="anonymous"></script>
     <script src="alert.js"></script>
 </body>
+<script>
+    // When the user clicks on div, open the popup
+    function myFunction() {
+      var popup = document.getElementById("myPopup");
+      popup.classList.toggle("show");
+    }
+
+    </script>
 
 </html>
