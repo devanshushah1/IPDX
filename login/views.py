@@ -10,6 +10,7 @@ from .models import *
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
 from .chatbot import chat
+from django.views.decorators.csrf import csrf_exempt
 
 
 # Create your views here.
@@ -151,11 +152,13 @@ def assign_randomCIty(city_list):
         ngo.city = random.choice(city_list)
         ngo.save()
 
-
+@csrf_exempt
 def chatUser(request):
     context = {}
     if request.method == 'POST':
-        message = request.POST['messageText'].encode('utf-8').strip()
+        # message = request.POST['messageText'].encode('utf-8').strip()
+        message = request.POST['messageText']
         bot_response = chat(message)
+        print(bot_response)
         context = {'status':'OK','answer':bot_response}
     return render(request, 'login/chat.html', context)

@@ -113,10 +113,17 @@
 
                 $.ajax({
                     type: "POST",
-                    url: "/ask",
-                    data: $(this).serialize(),
+                    url: "/chat",
+                    // data: $(this).serialize(),
+                    data: {
+                        text: $('#messageText').val(''),
+                        csrfmiddlewaretoken: '{{ csrf_token }}',
+                        dataType: "json",
+                        },  
                     success: function(response) {
                         $('#messageText').val('');
+                        // console.log(response);
+                        console.log(response["answer"]);
                         var answer = response.answer;
                         const chatPanel = document.getElementById("chatPanel");
                         $(".media-list").append('<li class="media"><div class="media-body"><div class="media"><div style = "color : black" class="media-body">' + answer + '<hr/></div></div></div></li>');
